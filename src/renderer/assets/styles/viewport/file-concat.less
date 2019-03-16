@@ -1,0 +1,88 @@
+@import "../theme/light";
+@import "../theme/variables";
+
+@file-list-width: 500px;
+@filter-height: 32px;
+.file-concat {
+  width: 100%;
+  border-left: @border-default;
+  border-bottom: @border-default;
+  overflow: hidden;
+  z-index: 1;
+
+  .filter {
+    height: @filter-height;
+    border-bottom: @border-default;
+    display: flex;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .ivu-btn {
+      height: 32px;
+      border-left: none;
+      border-right: none;
+
+      &:hover, &.active {
+        border-top: @border-default;
+        border-bottom: @border-default;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .ivu-input {
+      height: @filter-height;
+    }
+
+    .ivu-input-suffix {
+      line-height: @filter-height;
+    }
+
+    .ivu-input-icon-clear {
+      line-height: @filter-height;
+      cursor: pointer;
+    }
+  }
+
+  .file-list {
+    height: 300px;
+    border-right: @border-default;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    @file-item-height: 40px;
+    .file-item {
+      height: @file-item-height;
+      line-height: @file-item-height;
+      font-size: 12px;
+      padding: 0 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+
+      &.active {
+        background: #f0faff;
+        color: @primary-color;
+        border-right: 1px solid @primary-color;
+      }
+
+      &:hover {
+        color: @primary-color;
+      }
+    }
+  }
+}
